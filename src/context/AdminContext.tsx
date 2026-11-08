@@ -151,16 +151,13 @@ interface AdminContextType {
 
 const AdminContext = createContext<AdminContextType | undefined>(undefined);
 
-const STORAGE_KEY_AUTH = 'nx_admin_auth_v1';
+const SESSION_KEY_AUTH = 'nx_admin_session_auth';
 const STORAGE_KEY_CONTENT = 'nx_site_content_v1';
 
 export const AdminProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [isAdmin, setIsAdmin] = useState<boolean>(() => {
-    return localStorage.getItem(STORAGE_KEY_AUTH) === 'true';
-  });
-  const [isEditMode, setIsEditMode] = useState<boolean>(() => {
-    return localStorage.getItem(STORAGE_KEY_AUTH) === 'true';
-  });
+  // Always start with admin & edit mode OFF on regular website visits
+  const [isAdmin, setIsAdmin] = useState<boolean>(false);
+  const [isEditMode, setIsEditMode] = useState<boolean>(false);
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
   const [isCrmOpen, setIsCrmOpen] = useState(false);
   const [activeEditingSection, setActiveEditingSection] = useState<string | null>(null);
@@ -180,6 +177,9 @@ export const AdminProvider: React.FC<{ children: React.ReactNode }> = ({ childre
 
   // Fetch live content from MongoDB on initial mount
   useEffect(() => {
+    // Clear any legacy persistent admin auth so regular site visits are clean
+    localStorage.removeItem('nx_admin_auth_v1');
+
     const fetchRemoteContent = async () => {
       try {
         const res = await fetch('/api/content');
@@ -205,15 +205,23 @@ export const AdminProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     fetchRemoteContent();
   }, []);
 
-  // Check URL params for ?admin=login or ?admin=true
+  // Check URL params for ?admin=login or ?admin=true or active session
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
-    if (params.get('admin') === 'login' || params.get('admin') === 'true') {
-      if (!isAdmin) {
-        setIsLoginModalOpen(true);
-      } else {
+    const hasAdminParam = params.get('admin') === 'true' || params.get('admin') === 'login';
+    const hasSession = sessionStorage.getItem(SESSION_KEY_AUTH) === 'true';
+
+    if (hasAdminParam) {
+      if (hasSession) {
+        setIsAdmin(true);
         setIsEditMode(true);
+      } else {
+        setIsLoginModalOpen(true);
       }
+    } else if (hasSession) {
+      // Session authenticated, but edit mode off on normal link visits
+      setIsAdmin(true);
+      setIsEditMode(false);
     }
 
     // Keyboard shortcut: Ctrl + Shift + A to open Admin Login or toggle
@@ -236,7 +244,7 @@ export const AdminProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     if ((user === 'admin' && pass === 'admin123') || (user === 'admin' && pass === 'admin')) {
       setIsAdmin(true);
       setIsEditMode(true);
-      localStorage.setItem(STORAGE_KEY_AUTH, 'true');
+      sessionStorage.setItem(SESSION_KEY_AUTH, 'true');
       setIsLoginModalOpen(false);
       return true;
     }
@@ -248,7 +256,11 @@ export const AdminProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     setIsEditMode(false);
     setIsCrmOpen(false);
     setActiveEditingSection(null);
-    localStorage.removeItem(STORAGE_KEY_AUTH);
+    sessionStorage.removeItem(SESSION_KEY_AUTH);
+    localStorage.removeItem('nx_admin_auth_v1');
+    if (window.location.search.includes('admin')) {
+      window.history.replaceState({}, '', window.location.pathname);
+    }
   };
 
   // Sync edits to MongoDB database and localStorage
