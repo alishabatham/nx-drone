@@ -1,0 +1,6 @@
+{
+  "name": "NX Drone Intelligence",
+  "description": "Geospatial intelligence platform for drone data processing, photogrammetry, GIS spatial analysis, 3D digital twins, and AI computer vision.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
