@@ -94,20 +94,22 @@ export const IndustriesSection: React.FC<IndustriesSectionProps> = ({
           style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
         >
           {industries.map((ind) => {
-            const imgSrc = industryImageMap[ind.id] || '/assets/industries/construction.jpg';
+            const indFromContent = siteContent.industries?.find((i) => i.id === ind.id);
+            const imgSrc = indFromContent?.image || ind.image || industryImageMap[ind.id] || '/assets/industries/construction.jpg';
+            const indName = indFromContent?.name || ind.name;
 
             return (
               <div
                 key={ind.id}
                 onClick={() => {
-                  if (!isEditMode) onOpenInquiry('project', `${ind.name} Consultation`);
+                  if (!isEditMode) onOpenInquiry('project', `${indName} Consultation`);
                 }}
                 className="group relative flex-none w-[260px] sm:w-[300px] h-64 sm:h-72 rounded-2xl overflow-hidden cursor-pointer bg-slate-900 border border-slate-200/90 shadow-2xs hover:shadow-lg transition-all duration-300 hover:-translate-y-1 select-none flex flex-col justify-between p-5 snap-start"
               >
                 {/* Background Industry Photo */}
                 <img
                   src={imgSrc}
-                  alt={ind.name}
+                  alt={indName}
                   className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-500 ease-out group-hover:scale-105"
                   loading="lazy"
                 />
@@ -127,7 +129,7 @@ export const IndustriesSection: React.FC<IndustriesSectionProps> = ({
                         if (index >= 0) {
                           updated[index] = { ...updated[index], image: newUrl };
                         } else {
-                          updated.push({ id: ind.id, name: ind.name, image: newUrl });
+                          updated.push({ id: ind.id, name: indName, image: newUrl });
                         }
                         return { ...prev, industries: updated };
                       });
@@ -139,7 +141,7 @@ export const IndustriesSection: React.FC<IndustriesSectionProps> = ({
                 <div className="relative z-10 flex items-center justify-between gap-3">
                   <EditableText
                     as="h3"
-                    value={ind.name}
+                    value={indName}
                     onSave={(newName) => {
                       updateSiteContent((prev) => {
                         const existing = prev.industries || [];

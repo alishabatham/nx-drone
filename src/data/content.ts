@@ -15,7 +15,7 @@ export const DICTIONARY = {
     hero: {
       kicker: 'Complete Geospatial Technology & Intelligence Partner',
       title: 'Turning Aerial Data Into Intelligence That Moves Industries Forward',
-      subtitle: 'NX Drone Intelligence delivers integrated drone data processing, geospatial intelligence, AI-powered analytics, 3D mapping and custom technology solutions for complex real-world projects.',
+      subtitle: 'NX Aerial delivers integrated drone data processing, geospatial intelligence, AI-powered analytics, 3D mapping and custom technology solutions for complex real-world projects.',
       ctaCapabilities: 'Explore Capabilities',
       ctaDiscuss: 'Discuss Your Project',
       ctaPartner: 'Partner With NX',
@@ -54,7 +54,7 @@ export const DICTIONARY = {
     hero: {
       kicker: 'संपूर्ण जियोस्पेशियल टेक्नोलॉजी और इंटेलिजेंस पार्टनर',
       title: 'एरियल डेटा को व्यावहारिक इंटेलिजेंस में बदलना जो उद्योगों को आगे बढ़ाता है',
-      subtitle: 'NX Drone Intelligence जटिल रियल-वर्ल्ड प्रोजेक्ट्स के लिए इंटीग्रेटेड ड्रोन डेटा प्रोसेसिंग, जियोस्पेशियल इंटेलिजेंस, AI एनालिटिक्स और 3D मैपिंग समाधान प्रदान करता है।',
+      subtitle: 'NX Aerial जटिल रियल-वर्ल्ड प्रोजेक्ट्स के लिए इंटीग्रेटेड ड्रोन डेटा प्रोसेसिंग, जियोस्पेशियल इंटेलिजेंस, AI एनालिटिक्स और 3D मैपिंग समाधान प्रदान करता है।',
       ctaCapabilities: 'क्षमताएं देखें',
       ctaDiscuss: 'प्रोजेक्ट सबमिट करें',
       ctaPartner: 'पार्टनरशिप प्रोग्राम',

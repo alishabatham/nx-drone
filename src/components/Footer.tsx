@@ -20,11 +20,13 @@ export const Footer: React.FC<FooterProps> = ({ language, onOpenInquiry }) => {
           {/* Col 1: Brand & Philosophy (Spans 2 cols) */}
           <div className="lg:col-span-2 space-y-4">
             <div className="flex items-center gap-2.5">
-              <div className="w-8 h-8 rounded-lg bg-sky-600 flex items-center justify-center text-white font-bold text-sm tracking-wider">
-                NX
-              </div>
-              <span className="text-base font-bold tracking-tight text-white">
-                NX DRONE INTELLIGENCE
+              <img 
+                src="/assets/nx_logo.png" 
+                alt="NX Aerial" 
+                className="h-8 w-auto object-contain brightness-110" 
+              />
+              <span className="text-base font-extrabold tracking-tight text-white">
+                NX AERIAL
               </span>
             </div>
 
@@ -107,7 +109,7 @@ export const Footer: React.FC<FooterProps> = ({ language, onOpenInquiry }) => {
         {/* Bottom Sub-bar */}
         <div className="mt-12 pt-6 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-slate-500">
           <div>
-            &copy; {new Date().getFullYear()} NX Drone Intelligence Pvt. Ltd. All rights reserved.
+            &copy; {new Date().getFullYear()} NX Aerial Pvt. Ltd. All rights reserved.
           </div>
 
           <div className="flex items-center gap-4">

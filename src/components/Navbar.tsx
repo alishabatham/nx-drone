@@ -33,30 +33,20 @@ export const Navbar: React.FC<NavbarProps> = ({
         <div className="flex items-center justify-between gap-6 h-18">
           
           {/* ========================================================= */}
-          {/* LOGO: Clean Drone Icon with Lens (Matching Image 2 Droney) */}
+          {/* LOGO: NX Aerial Transparent Brand Logo                     */}
           {/* ========================================================= */}
-          <a href="#" className="flex items-center gap-3 shrink-0 group">
-            {/* Custom Drone SVG Logo */}
-            <div className="w-10 h-10 rounded-xl bg-slate-900 group-hover:bg-orange-500 transition-colors flex items-center justify-center text-white shadow-xs">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-6 h-6">
-                {/* Propeller arms */}
-                <path d="M4 8l4 2m8 0l4-2M4 16l4-2m8 0l4 2" strokeLinecap="round" />
-                {/* Rotors */}
-                <circle cx="4" cy="8" r="2" fill="currentColor" fillOpacity="0.2" />
-                <circle cx="20" cy="8" r="2" fill="currentColor" fillOpacity="0.2" />
-                <circle cx="4" cy="16" r="2" fill="currentColor" fillOpacity="0.2" />
-                <circle cx="20" cy="16" r="2" fill="currentColor" fillOpacity="0.2" />
-                {/* Center Gimbal Pod */}
-                <rect x="8" y="9" width="8" height="6" rx="3" strokeWidth="2" />
-                <circle cx="12" cy="12" r="1.5" fill="currentColor" />
-              </svg>
-            </div>
+          <a href="#" className="flex items-center gap-2.5 shrink-0 group">
+            <img 
+              src="/assets/nx_logo.png" 
+              alt="NX Aerial" 
+              className="h-9 w-auto object-contain transition-transform group-hover:scale-105" 
+            />
             <div className="flex flex-col">
-              <span className="text-lg font-bold tracking-tight text-slate-900 group-hover:text-orange-600 transition-colors leading-none">
-                NX Drone
+              <span className="text-xl font-extrabold tracking-tight text-slate-900 group-hover:text-emerald-600 transition-colors leading-none">
+                NX Aerial
               </span>
               <span className="text-[10px] font-semibold text-slate-400 uppercase tracking-widest mt-0.5">
-                Intelligence
+                Drone Intelligence
               </span>
             </div>
           </a>

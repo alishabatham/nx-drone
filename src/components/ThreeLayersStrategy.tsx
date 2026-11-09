@@ -28,8 +28,8 @@ export const ThreeLayersStrategy: React.FC<ThreeLayersStrategyProps> = ({
           </span>
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 tracking-tight mt-1.5">
             {isHindi 
-              ? '3 मुख्य स्तरों में संगठित NX रणनीति' 
-              : 'The 3 Pillars of NX Drone Intelligence'}
+              ? '3 मुख्य स्तरों में संगठित NX Aerial रणनीति' 
+              : 'The 3 Pillars of NX Aerial'}
           </h2>
           <p className="mt-2.5 text-sm sm:text-base text-slate-600 font-normal leading-relaxed max-w-2xl mx-auto">
             {isHindi

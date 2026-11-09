@@ -106,7 +106,7 @@ const defaultSiteContent = {
   hero: {
     kicker: 'Geospatial Technology & Intelligence Partner',
     title: 'Turning Aerial Data Into Intelligence That Moves Industries Forward.',
-    subtitle: 'NX Drone Intelligence delivers integrated drone data processing, geospatial intelligence, AI-powered analytics, 3D mapping and custom technology solutions for complex real-world projects.',
+    subtitle: 'NX Aerial delivers integrated drone data processing, geospatial intelligence, AI-powered analytics, 3D mapping and custom technology solutions for complex real-world projects.',
     statGsd: '≤ 1.4 cm',
     statRmse: '± 1.8 cm',
     statSla: '< 24h',
@@ -115,30 +115,30 @@ const defaultSiteContent = {
     {
       id: 'operations',
       title: 'NX Drone Operations',
-      image: '/assets/showcase/field_pilots.jpg',
+      image: '/assets/showcase/drone_operations_field.jpg',
     },
     {
       id: 'intelligence',
-      title: 'NX Geospatial Intelligence',
-      image: '/assets/showcase/orthomosaic_map.jpg',
+      title: 'AI & Computer Vision',
+      image: '/assets/showcase/ai_computer_vision.jpg',
     },
     {
       id: 'solutions',
       title: 'NX Digital Solutions',
-      image: '/assets/showcase/lab_engineering.jpg',
+      image: '/assets/showcase/digital_solutions_gis.jpg',
     },
   ],
   services: [
     {
       id: 'photogrammetry-data-processing',
       name: 'Drone Data Processing',
-      image: '/assets/showcase/hero_drone.jpg',
+      image: '/assets/showcase/drone_operations_field.jpg',
       targetCatId: 'photogrammetry-data-processing',
     },
     {
       id: 'gis-geospatial-intelligence',
       name: 'GIS & Survey Intelligence',
-      image: '/assets/showcase/orthomosaic_map.jpg',
+      image: '/assets/showcase/digital_solutions_gis.jpg',
       targetCatId: 'gis-geospatial-intelligence',
     },
     {
@@ -150,7 +150,7 @@ const defaultSiteContent = {
     {
       id: 'ai-computer-vision',
       name: 'AI & Computer Vision',
-      image: '/src/assets/images/nx_solar_thermal_inspection_1794131161902.jpg',
+      image: '/assets/showcase/ai_computer_vision.jpg',
       targetCatId: 'ai-computer-vision',
     },
     {
@@ -162,7 +162,7 @@ const defaultSiteContent = {
     {
       id: 'software-technology-development',
       name: 'Software & Web GIS Development',
-      image: '/assets/showcase/mountain_flight.jpg',
+      image: '/assets/showcase/digital_solutions_gis.jpg',
       targetCatId: 'software-technology-development',
     },
   ],
@@ -183,7 +183,7 @@ const defaultSiteContent = {
   partner: {
     title: 'You Bring the Project. We Engineer the Execution.',
     subtitle: 'B2B Collaboration',
-    desc: 'Partner with NX Drone Intelligence for seamless white-label photogrammetry, GIS analytics, and turnkey enterprise execution.',
+    desc: 'Partner with NX Aerial for seamless white-label photogrammetry, GIS analytics, and turnkey enterprise execution.',
     track1Title: 'For Drone Survey Companies & DSPs',
     track1Sub: 'White-Label PPK Processing & 24h Delivery',
     track1Desc: 'You fly and capture the raw data. We execute high-throughput cluster photogrammetry, cut/fill volumetrics, and certified DTM reports under your white-label brand.',

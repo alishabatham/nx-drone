@@ -120,7 +120,7 @@ export const AdminCMS: React.FC<AdminCMSProps> = ({ isOpen, onClose, onRefreshDa
             <div>
               <div className="flex items-center gap-2">
                 <h3 className="text-base font-bold text-slate-900">
-                  NX Drone Intelligence · Central Admin CMS
+                  NX Aerial · Central Admin CMS
                 </h3>
                 <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-sky-100 text-sky-800 font-semibold">
                   Live Operations
@@ -420,7 +420,7 @@ export const AdminCMS: React.FC<AdminCMSProps> = ({ isOpen, onClose, onRefreshDa
 
         {/* Footer */}
         <div className="px-6 py-3 border-t border-slate-200 bg-slate-50 text-[11px] text-slate-500 flex justify-between items-center">
-          <span>NX Drone Intelligence Platform Admin Console</span>
+          <span>NX Aerial Platform Admin Console</span>
           <button
             onClick={onClose}
             className="px-3 py-1 rounded bg-slate-200 text-slate-700 hover:bg-slate-300 font-medium"
